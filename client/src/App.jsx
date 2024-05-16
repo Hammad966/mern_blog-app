@@ -1,22 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import Signin from './pages/Signin'
+import Signout from './pages/Signout'
+import About from './pages/About'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-       
-      </div>
-     
+     <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='/about' element={<About />}></Route>
+      <Route path='/sign-in' element={<Signin />}></Route>
+      <Route path='/projects' element={<Projects />}></Route>
+      <Route path='/dashboard' element={<Dashboard />}></Route>
+      <Route path='/sign-out' element={<Signout />}></Route>
+     </Routes>
+     </BrowserRouter>
     </>
   )
 }
