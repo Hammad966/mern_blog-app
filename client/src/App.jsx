@@ -7,6 +7,7 @@ import About from './pages/About'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Header from './components/Header'
+import FooterCom from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,9 @@ function App() {
       <Route path='/projects' element={<Projects />}></Route>
       <Route path='/dashboard' element={<Dashboard />}></Route>
       <Route path='/sign-up' element={<Signup />}></Route>
+      
      </Routes>
+     <FooterCom />
      </BrowserRouter>
     </>
   )
